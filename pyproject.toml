@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spotify-playlist-maker"
+version = "0.1.0"
+description = "A tool for creating and managing Spotify playlists"
+requires-python = ">=3.8"
+dependencies = ["spotipy>=2.22.1", "python-dateutil>=2.8.0"]
+
+[project.optional-dependencies]
+dev = ["black>=22.0.0", "isort>=5.10.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spotify_playlist_maker"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.14.1",
+    "pylint>=3.2.7",
+    "types-python-dateutil>=2.9.0.20241206",
+    "vulture>=2.14",
+]
