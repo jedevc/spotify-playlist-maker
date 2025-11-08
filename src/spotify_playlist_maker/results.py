@@ -106,8 +106,7 @@ class Diff:
                     lines.append(f"     • {song.name} - {song.artist}")
         else:
             # Summary stats
-            lines.append(f"  📊 Total songs:")
-            lines.append(f"     Liked songs: {len(self.liked_songs)}")
+            lines.append(f"  📊 Liked songs: {len(self.liked_songs)}")
             lines.append(f"     Playlist songs: {len(self.playlist_songs)}")
             lines.append(f"     In both: {len(self.liked_uris & self.playlist_uris)}")
 
